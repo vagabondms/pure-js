@@ -5,6 +5,7 @@ const outfitDiv = document.querySelector("#outfits");
 const wrapper = document.createElement("ul");
 outfits.forEach((outfit) => {
   const li = document.createElement("li");
+  li.classList.add("outfits");
   const img = document.createElement("img");
   img.src = outfit.imgSrc;
   const details = document.createElement("div");

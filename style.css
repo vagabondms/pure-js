@@ -16,6 +16,11 @@ body {
   margin: 0;
   padding: 0;
 }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 
 #app {
   width: 100vw;
@@ -72,7 +77,6 @@ nav.nav {
 }
 
 ul.menus {
-  list-style-type: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
