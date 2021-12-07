@@ -1,18 +1,17 @@
-import outfits from "../data/data.js";
+const loadItems = async () => {
+  try {
+    const result = await fetch("data/data.json");
+    const parsed = result.json();
+    return parsed;
+  } catch (error) {
+    console.error(error);
+    return;
+  }
+};
 
-const outfitDiv = document.querySelector("#outfits");
+const init = async () => {
+  const items = await loadItems();
+  console.log(items);
+};
 
-const wrapper = document.createElement("ul");
-outfits.forEach((outfit) => {
-  const li = document.createElement("li");
-  li.classList.add("outfits");
-  const img = document.createElement("img");
-  img.src = outfit.imgSrc;
-  const details = document.createElement("div");
-  details.innerHTML = `${outfit.gender} ${outfit.size}`;
-  li.appendChild(img);
-  li.appendChild(details);
-  wrapper.appendChild(li);
-});
-
-outfitDiv.appendChild(wrapper);
+init();
